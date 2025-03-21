@@ -14,6 +14,18 @@
 	document.write('<scr' + 'ipt src="https://swrdfgd.github.io/RandomWords/de/germanword'+Math.ceil(Math.random()*390)+'.js"></scr' + 'ipt>');
  }
  </script>
+ 
+  <script>
+ // KarakterChina
+ document.write('<scr' + 'ipt src="https://swrdfgd.github.io/RandomWords/chChar/listChineseChar.js"></scr' + 'ipt>');
+ // kataSemuaBahasa
+ kata = [];
+ document.write('<scr' + 'ipt src="https://swrdfgd.github.io/RandomWords/kata/output_'+Math.ceil(Math.random()*424)+'.js"></scr' + 'ipt>');
+ while(Math.random() < 1/2){
+	 document.write('<scr' + 'ipt src="https://swrdfgd.github.io/RandomWords/kata/output_'+Math.ceil(Math.random()*424)+'.js"></scr' + 'ipt>');
+ }
+ </script>
+ 
 <script>
  punk = [];
  piu = 0;
@@ -227,7 +239,7 @@
 
   </script>
 
-  <script>
+ <script>
   //new Word
   function getRandomWord(mode,font = getComputedStyle(document.body).fontFamily) {
    if (mode == 0){
@@ -304,6 +316,29 @@
       else if (Math.random() < 1/2){
          kataBaru = kataBaru.charAt(0).toUpperCase() + kataBaru.slice(1)
       }
+      return kataBaru;
+   }
+   
+   if (mode == 6){
+      //mode kataSemuaBahasa
+
+      var kataBaru = kata[Math.floor(Math.random()*kata.length)];
+      if (Math.random() < 1/2){
+         kataBaru = kataBaru.toUpperCase();
+      }
+      else if (Math.random() < 1/2){
+         kataBaru = kataBaru.charAt(0).toUpperCase() + kataBaru.slice(1)
+      }
+      return kataBaru;
+   }
+   
+   if (mode == 7){
+     
+      var panjangKata = 2;
+      while (Math.random() < 1/2){panjangKata++;}
+      panjangKata = Math.ceil(Math.random()*panjangKata);
+      var kataBaru = '';
+      for (j = 0; j < panjangKata; j++){kataBaru += chineseChar[Math.floor(Math.random()*chineseChar.length)];}
       return kataBaru;
    }
 
